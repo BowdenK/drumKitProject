@@ -1,4 +1,3 @@
-let clapSLot = document.getElementById('clap');
 
 const s1 = document.getElementById('boom');
 const s2 = document.getElementById('clap');
@@ -10,60 +9,80 @@ const s7 = document.getElementById('snare');
 const s8 = document.getElementById('tink');
 const s9 = document.getElementById('tom');
 
+let boomTxt = document.getElementById('boomTxt');
+let clapTxt = document.getElementById('clapTxt');
+let hihatTxt = document.getElementById('hihatTxt');
+let kickTxt = document.getElementById('kickTxt');
+let openhatTxt = document.getElementById('openhatTxt');
+let rideTxt = document.getElementById('rideTxt');
+let snareTxt = document.getElementById('snareTxt');
+let tinkTxt = document.getElementById('tinkTxt');
+let tomTxt = document.getElementById('tomTxt');
+
+giveClickListener(boomTxt, 'a');
+giveClickListener(clapTxt, 's');
+giveClickListener(hihatTxt, 'd');
+giveClickListener(kickTxt, 'f');
+giveClickListener(openhatTxt, 'g');
+giveClickListener(rideTxt, 'h');
+giveClickListener(snareTxt, 'j');
+giveClickListener(tinkTxt, 'k');
+giveClickListener(tomTxt, 'l');
+
+function giveClickListener(ele, command){
+    ele.addEventListener('click', (event) => {hitDrum(command);})
+}
+
 document.addEventListener('keydown', (event) => {
     if(event.repeat){return;}
-    clapSLot.textContent = event.key;
+    
     hitDrum(event.key)
+    clapTxt.textContent = event.key;
 })
 
+function startAudio(sound){
+    sound.currentTime = 0
+    sound.play()
+}
 
 function hitDrum (input){
     
     switch(input){
         case 'a':
             console.log('BOOM!!');
-            s1.currentTime = 0
-            s1.play();
+            startAudio(s1)
             break;
         case 's':
             console.log('CLAP!!');
-            s2.currentTime = 0
-            s2.play();
+            startAudio(s2);
             break;
         case 'd':
             console.log('HiHat!!');
-            s3.currentTime = 0
-            s3.play();
+            startAudio(s3);
             break;
         case 'f':
             console.log('Kick!!');
-            s4.currentTime = 0
-            s4.play();
+            startAudio(s4);
             break;
         case 'g':
             console.log('OpenHat!!');
-            s5.currentTime = 0
-            s5.play();
+            startAudio(s5);
             break;
         case 'h':
             console.log('Ride!!');
-            s6.currentTime = 0
-            s6.play();
+            startAudio(s6);
             break;
         case 'j':
             console.log('Snare!!');
-            s7.currentTime = 0
-            s7.play();
+            startAudio(s7);
             break;
         case 'k':
             console.log('Tink!!');
-            s8.currentTime = 0
-            s8.play();
+            startAudio(s8);
             break;
         case 'l':
             console.log('Tom!!');
-            s9.currentTime = 0
-            s9.play();
+            startAudio(s9);
             break;
     }
 }
