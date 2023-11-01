@@ -11,6 +11,7 @@ const s8 = document.getElementById('tink');
 const s9 = document.getElementById('tom');
 
 document.addEventListener('keydown', (event) => {
+    if(event.repeat){return;}
     clapSLot.textContent = event.key;
     hitDrum(event.key)
 })
@@ -21,38 +22,47 @@ function hitDrum (input){
     switch(input){
         case 'a':
             console.log('BOOM!!');
+            s1.currentTime = 0
             s1.play();
             break;
         case 's':
             console.log('CLAP!!');
+            s2.currentTime = 0
             s2.play();
             break;
         case 'd':
             console.log('HiHat!!');
+            s3.currentTime = 0
             s3.play();
             break;
         case 'f':
             console.log('Kick!!');
+            s4.currentTime = 0
             s4.play();
             break;
         case 'g':
             console.log('OpenHat!!');
+            s5.currentTime = 0
             s5.play();
             break;
         case 'h':
             console.log('Ride!!');
+            s6.currentTime = 0
             s6.play();
             break;
         case 'j':
             console.log('Snare!!');
+            s7.currentTime = 0
             s7.play();
             break;
         case 'k':
             console.log('Tink!!');
+            s8.currentTime = 0
             s8.play();
             break;
         case 'l':
             console.log('Tom!!');
+            s9.currentTime = 0
             s9.play();
             break;
     }
