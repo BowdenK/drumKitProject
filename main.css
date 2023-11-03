@@ -2,14 +2,21 @@ body {
     background-color: rgb(31, 31, 31);
 }
 
-h1 {
+h1, h3 {
     color: aliceblue;
-    font-family: 'Rock Salt', cursive;
-    margin: 60px;
+    font-family: 'Rock Salt', cursive;    
     text-align: center;
 
     justify-content: center;
     align-items: center;
+}
+
+h1 {margin: 60px;}
+
+h3 {
+    font-size: 30px;
+    color: aqua !important;
+    margin: 10px;
 }
 
 .container{
@@ -22,7 +29,7 @@ h1 {
 }
 
 #panel1, #panel2, #panel3 {
-    color: black;
+    color: rgb(255, 255, 255);
     font-family: 'Rock Salt', cursive;
     font-size: 10px;
     border: 2px solid rgb(107, 107, 107);

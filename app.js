@@ -1,4 +1,4 @@
-// Assigning Sound
+// Assigning Sound and output Text
 
 const s1 = document.getElementById('boom');
 const s2 = document.getElementById('clap');
@@ -10,30 +10,33 @@ const s7 = document.getElementById('snare');
 const s8 = document.getElementById('tink');
 const s9 = document.getElementById('tom');
 
+let output = document.getElementById('output');
+
 // Assigning Interactive Elements
+// Note: getElementsByClassName returns array.
 
-let boomTxt = document.getElementById('boomTxt');
-let clapTxt = document.getElementById('clapTxt');
-let hihatTxt = document.getElementById('hihatTxt');
-let kickTxt = document.getElementById('kickTxt');
-let openhatTxt = document.getElementById('openhatTxt');
-let rideTxt = document.getElementById('rideTxt');
-let snareTxt = document.getElementById('snareTxt');
-let tinkTxt = document.getElementById('tinkTxt');
-let tomTxt = document.getElementById('tomTxt');
+let boomPad = document.getElementsByClassName('boomPad');
+let clapPad = document.getElementsByClassName('clapPad');
+let hihatPad = document.getElementsByClassName('hihatPad');
+let kickPad = document.getElementsByClassName('kickPad');
+let openhatPad = document.getElementsByClassName('openhatPad');
+let ridePad = document.getElementsByClassName('ridePad');
+let snarePad = document.getElementsByClassName('snarePad');
+let tinkPad = document.getElementsByClassName('tinkPad');
+let tomPad = document.getElementsByClassName('tomPad');
 
-giveClickListener(boomTxt, 'a');
-giveClickListener(clapTxt, 's');
-giveClickListener(hihatTxt, 'd');
-giveClickListener(kickTxt, 'f');
-giveClickListener(openhatTxt, 'g');
-giveClickListener(rideTxt, 'h');
-giveClickListener(snareTxt, 'j');
-giveClickListener(tinkTxt, 'k');
-giveClickListener(tomTxt, 'l');
+giveClickListener(boomPad, 'a');
+giveClickListener(clapPad, 's');
+giveClickListener(hihatPad, 'd');
+giveClickListener(kickPad, 'f');
+giveClickListener(openhatPad, 'g');
+giveClickListener(ridePad, 'h');
+giveClickListener(snarePad, 'j');
+giveClickListener(tinkPad, 'k');
+giveClickListener(tomPad, 'l');
 
 function giveClickListener(ele, command){
-    ele.addEventListener('click', (event) => {hitDrum(command);})
+    ele[0].addEventListener('click', (event) => {hitDrum(command);})
 }
 
 // Logic
@@ -42,46 +45,45 @@ document.addEventListener('keydown', (event) => {
     if(event.repeat){return;}   //prevents key spamming
     
     hitDrum(event.key)
-    clap2.textContent = event.key;
 })
 
 function hitDrum (input){
     
     switch(input){
         case 'a':
-            console.log('BOOM!!');
+            output.textContent = 'BOOM!!';
             startAudio(s1)
             break;
         case 's':
-            console.log('CLAP!!');
+            output.textContent = 'CLAP!!';
             startAudio(s2);
             break;
         case 'd':
-            console.log('HiHat!!');
+            output.textContent = 'HiHat!!';
             startAudio(s3);
             break;
         case 'f':
-            console.log('Kick!!');
+            output.textContent = 'Kick!!';
             startAudio(s4);
             break;
         case 'g':
-            console.log('OpenHat!!');
+            output.textContent = 'OpenHat!!';
             startAudio(s5);
             break;
         case 'h':
-            console.log('Ride!!');
+            output.textContent = 'Ride!!';
             startAudio(s6);
             break;
         case 'j':
-            console.log('Snare!!');
+            output.textContent = 'Snare!!';
             startAudio(s7);
             break;
         case 'k':
-            console.log('Tink!!');
+            output.textContent = 'Tink!!';
             startAudio(s8);
             break;
         case 'l':
-            console.log('Tom!!');
+            output.textContent = 'Tom!!';
             startAudio(s9);
             break;
     }
@@ -91,6 +93,3 @@ function startAudio(sound){
     sound.currentTime = 0   //resets sound, allows sound to interrupt itself.
     sound.play()
 }
-
-
-//console.log('hello there');
