@@ -42,8 +42,13 @@ h3 {
     width: 100px;
     margin: 5px;
     padding: 0px 0;
+    transition: background-color 0.1s;
 }
 
 #panel1 {background-color: rgb(196, 142, 43);}
 #panel2 {background-color:rgb(43, 158, 114);}
 #panel3 {background-color:rgb(184, 69, 184);}
+
+#panel1:active, #panel2:active, #panel3:active {
+    background-color: rgb(82, 80, 80);
+}
