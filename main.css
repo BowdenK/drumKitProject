@@ -1,0 +1,38 @@
+body {
+    background-color: rgb(31, 31, 31);
+}
+
+h1 {
+    color: aliceblue;
+    font-family: 'Rock Salt', cursive;
+    margin: 60px;
+    text-align: center;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#panel1, #panel2, #panel3 {
+    color: black;
+    font-family: 'Rock Salt', cursive;
+    font-size: 10px;
+    border: 2px solid rgb(107, 107, 107);
+    border-radius: 45px;
+    height: 100px;
+    width: 100px;
+    margin: 5px;
+    padding: 0px 0;
+}
+
+#panel1 {background-color: rgb(153, 100, 2);}
+#panel2 {background-color:rgb(0, 146, 90);}
+#panel3 {background-color:rgb(117, 0, 117);}

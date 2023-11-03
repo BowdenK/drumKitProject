@@ -1,3 +1,4 @@
+// Assigning Sound
 
 const s1 = document.getElementById('boom');
 const s2 = document.getElementById('clap');
@@ -8,6 +9,8 @@ const s6 = document.getElementById('ride');
 const s7 = document.getElementById('snare');
 const s8 = document.getElementById('tink');
 const s9 = document.getElementById('tom');
+
+// Assigning Interactive Elements
 
 let boomTxt = document.getElementById('boomTxt');
 let clapTxt = document.getElementById('clapTxt');
@@ -33,17 +36,14 @@ function giveClickListener(ele, command){
     ele.addEventListener('click', (event) => {hitDrum(command);})
 }
 
+// Logic
+
 document.addEventListener('keydown', (event) => {
-    if(event.repeat){return;}
+    if(event.repeat){return;}   //prevents key spamming
     
     hitDrum(event.key)
-    clapTxt.textContent = event.key;
+    clap2.textContent = event.key;
 })
-
-function startAudio(sound){
-    sound.currentTime = 0
-    sound.play()
-}
 
 function hitDrum (input){
     
@@ -85,6 +85,11 @@ function hitDrum (input){
             startAudio(s9);
             break;
     }
+}
+
+function startAudio(sound){
+    sound.currentTime = 0   //resets sound, allows sound to interrupt itself.
+    sound.play()
 }
 
 
